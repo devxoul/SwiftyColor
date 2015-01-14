@@ -1,6 +1,8 @@
 SwiftyColor
 ===========
 
+[![Build Status](https://travis-ci.org/devxoul/SwiftyColor.svg)](https://travis-ci.org/devxoul/SwiftyColor)
+
 The most sexy way to use colors in Swift. Both compatible with iOS and OS X.
 
 Hex Operator
