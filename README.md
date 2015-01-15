@@ -26,6 +26,14 @@ let red = UIColor.redColor() ~ 10%
 let float = UIColor.blueColor() ~ 0.5 // 50%
 ```
 
+Percent Operator
+----------------
+
+```swift
+let view = UIView()
+view.alpha = 30% // 0.3
+```
+
 
 License
 -------
