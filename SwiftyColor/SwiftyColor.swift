@@ -39,13 +39,13 @@ postfix func ~(hex: Int) -> Color {
 
 /// e.g. `50%`
 postfix operator % {}
-postfix func %(percent: Int) -> Float {
-    return Float(percent)%
+postfix func %(percent: Int) -> CGFloat {
+    return CGFloat(percent)%
 }
-postfix func %(percent: CGFloat) -> Float {
-    return Float(percent)%
+postfix func %(percent: Float) -> CGFloat {
+    return CGFloat(percent)%
 }
-postfix func %(percent: Float) -> Float {
+postfix func %(percent: CGFloat) -> CGFloat {
     return percent / 100
 }
 
