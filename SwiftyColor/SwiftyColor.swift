@@ -25,50 +25,50 @@
 
 #if os(iOS)
     import UIKit
-    typealias Color = UIColor
+    public typealias Color = UIColor
 #elseif os(OSX)
     import AppKit
-    typealias Color = NSColor
+    public typealias Color = NSColor
 #endif
 
 /// e.g. `0x123456~`
 postfix operator ~ {}
-postfix func ~(hex: Int) -> Color {
+public postfix func ~(hex: Int) -> Color {
     return hex ~ 1
 }
 
 /// e.g. `50%`
 postfix operator % {}
-postfix func %(percent: Int) -> CGFloat {
+public postfix func %(percent: Int) -> CGFloat {
     return CGFloat(percent)%
 }
-postfix func %(percent: Float) -> CGFloat {
+public postfix func %(percent: Float) -> CGFloat {
     return CGFloat(percent)%
 }
-postfix func %(percent: CGFloat) -> CGFloat {
+public postfix func %(percent: CGFloat) -> CGFloat {
     return percent / 100
 }
 
 /// e.g. `0x123456 ~ 50%`
 infix operator ~ { associativity left precedence 200 }
-func ~(hex: Int, alpha: Int) -> Color {
+public func ~(hex: Int, alpha: Int) -> Color {
     return hex ~ CGFloat(alpha)
 }
-func ~(hex: Int, alpha: Float) -> Color {
+public func ~(hex: Int, alpha: Float) -> Color {
     return hex ~ CGFloat(alpha)
 }
-func ~(hex: Int, alpha: CGFloat) -> Color {
+public func ~(hex: Int, alpha: CGFloat) -> Color {
     let red = CGFloat(hex >> 16 & 0xff) / 255
     let green = CGFloat(hex >> 8 & 0xff) / 255
     let blue  = CGFloat(hex & 0xff) / 255
     return Color(red: red, green: green, blue: blue, alpha: alpha)
 }
-func ~(color: Color, alpha: Int) -> Color {
+public func ~(color: Color, alpha: Int) -> Color {
     return color ~ CGFloat(alpha)
 }
-func ~(color: Color, alpha: Float) -> Color {
+public func ~(color: Color, alpha: Float) -> Color {
     return color ~ CGFloat(alpha)
 }
-func ~(color: Color, alpha: CGFloat) -> Color {
+public func ~(color: Color, alpha: CGFloat) -> Color {
     return color.colorWithAlphaComponent(alpha)
 }
