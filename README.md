@@ -35,6 +35,30 @@ view.alpha = 30% // 0.3
 ```
 
 
+Short Color Name Alias
+----------------------
+
+With SwiftyColor, you can use short alias for default color names.
+
+| Color Name | Short | Even(?) Shorter |
+|---|---|---|
+| `UIColor.blackColor` | `UIColor.black` | `Color.black` |
+| `UIColor.darkGrayColor` | `UIColor.darkGray` | `Color.darkGray` |
+| `UIColor.lightGrayColor` | `UIColor.lightGray` | `Color.lightGray` |
+| `UIColor.whiteColor` | `UIColor.white` | `Color.white` |
+| `UIColor.grayColor` | `UIColor.gray` | `Color.gray` |
+| `UIColor.redColor` | `UIColor.red` | `Color.red` |
+| `UIColor.greenColor` | `UIColor.green` | `Color.green` |
+| `UIColor.blueColor` | `UIColor.blue` | `Color.blue` |
+| `UIColor.cyanColor` | `UIColor.cyan` | `Color.cyan` |
+| `UIColor.yellowColor` | `UIColor.yellow` | `Color.yellow` |
+| `UIColor.magentaColor` | `UIColor.magenta` | `Color.magenta` |
+| `UIColor.orangeColor` | `UIColor.orange` | `Color.orange` |
+| `UIColor.purpleColor` | `UIColor.purple` | `Color.purple` |
+| `UIColor.brownColor` | `UIColor.brown` | `Color.brown` |
+| `UIColor.clearColor` | `UIColor.clear` | `Color.clear` |
+
+
 License
 -------
 

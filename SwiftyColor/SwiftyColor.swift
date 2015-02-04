@@ -72,3 +72,23 @@ public func ~(color: Color, alpha: Float) -> Color {
 public func ~(color: Color, alpha: CGFloat) -> Color {
     return color.colorWithAlphaComponent(alpha)
 }
+
+
+/// short alias for color names
+public extension Color {
+    public class var black: Color { return self.blackColor() }
+    public class var darkGray: Color { return self.darkGrayColor() }
+    public class var lightGray: Color { return self.lightGrayColor() }
+    public class var white: Color { return self.whiteColor() }
+    public class var gray: Color { return self.grayColor() }
+    public class var red: Color { return self.redColor() }
+    public class var green: Color { return self.greenColor() }
+    public class var blue: Color { return self.blueColor() }
+    public class var cyan: Color { return self.cyanColor() }
+    public class var yellow: Color { return self.yellowColor() }
+    public class var magenta: Color { return self.magentaColor() }
+    public class var orange: Color { return self.orangeColor() }
+    public class var purple: Color { return self.purpleColor() }
+    public class var brown: Color { return self.brownColor() }
+    public class var clear: Color { return self.clearColor() }
+}
