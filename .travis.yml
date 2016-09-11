@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode611
+osx_image: xcode8
 script:
-    - xctool -scheme 'SwiftyColor-iOS' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test
-    - xctool -scheme 'SwiftyColor-OSX' test
+    - xcodebuild -scheme 'SwiftyColor-iOS' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
+    - xcodebuild -scheme 'SwiftyColor-OSX' test | xcpretty -c
