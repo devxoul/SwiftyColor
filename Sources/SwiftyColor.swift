@@ -25,31 +25,47 @@
 
 #if os(iOS)
     import UIKit
+    public typealias Color = UIColor
 #elseif os(OSX)
     import AppKit
+    public typealias Color = NSColor
 #endif
 
-import XCTest
-import SwiftyColor
-
-final class SwiftyColorTests: XCTestCase {
-    
-    func testHex() {
-        let color = 0x123456.color
-        var (red, green, blue) = (CGFloat(), CGFloat(), CGFloat())
-        color.getRed(&red, green: &green, blue: &blue, alpha: nil)
-        XCTAssert(Int(red * 255) == 0x12)
-        XCTAssert(Int(green * 255) == 0x34)
-        XCTAssert(Int(blue * 255) == 0x56)
+extension Int {
+    public var color: Color {
+        let red = CGFloat(self as Int >> 16 & 0xff) / 255
+        let green = CGFloat(self >> 8 & 0xff) / 255
+        let blue  = CGFloat(self & 0xff) / 255
+        return Color(red: red, green: green, blue: blue, alpha: 1)
     }
+}
 
-    func testAlpha() {
-        XCTAssertEqual(0x123456.color ~ 50%, 0x123456.color.withAlphaComponent(0.5))
-    }
-    
-    func testPercent() {
-        XCTAssert(50% == 0.5)
-        XCTAssert(12% == 0.12)
-    }
+precedencegroup AlphaPrecedence {
+    associativity: left
+    higherThan: RangeFormationPrecedence
+    lowerThan: AdditionPrecedence
+}
 
+infix operator ~ : AlphaPrecedence
+
+public func ~ (color: Color, alpha: Int) -> Color {
+    return color ~ CGFloat(alpha)
+}
+public func ~ (color: Color, alpha: Float) -> Color {
+    return color ~ CGFloat(alpha)
+}
+public func ~ (color: Color, alpha: CGFloat) -> Color {
+    return color.withAlphaComponent(alpha)
+}
+
+/// e.g. `50%`
+postfix operator %
+public postfix func % (percent: Int) -> CGFloat {
+    return CGFloat(percent)%
+}
+public postfix func % (percent: Float) -> CGFloat {
+    return CGFloat(percent)%
+}
+public postfix func % (percent: CGFloat) -> CGFloat {
+    return percent / 100
 }
