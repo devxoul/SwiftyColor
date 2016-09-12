@@ -24,32 +24,32 @@
 // SOFTWARE.
 
 #if os(iOS)
-    import UIKit
+  import UIKit
 #elseif os(OSX)
-    import AppKit
+  import AppKit
 #endif
 
 import XCTest
 import SwiftyColor
 
 final class SwiftyColorTests: XCTestCase {
-    
-    func testHex() {
-        let color = 0x123456.color
-        var (red, green, blue) = (CGFloat(), CGFloat(), CGFloat())
-        color.getRed(&red, green: &green, blue: &blue, alpha: nil)
-        XCTAssert(Int(red * 255) == 0x12)
-        XCTAssert(Int(green * 255) == 0x34)
-        XCTAssert(Int(blue * 255) == 0x56)
-    }
 
-    func testAlpha() {
-        XCTAssertEqual(0x123456.color ~ 50%, 0x123456.color.withAlphaComponent(0.5))
-    }
-    
-    func testPercent() {
-        XCTAssert(50% == 0.5)
-        XCTAssert(12% == 0.12)
-    }
+  func testHex() {
+    let color = 0x123456.color
+    var (red, green, blue) = (CGFloat(), CGFloat(), CGFloat())
+    color.getRed(&red, green: &green, blue: &blue, alpha: nil)
+    XCTAssert(Int(red * 255) == 0x12)
+    XCTAssert(Int(green * 255) == 0x34)
+    XCTAssert(Int(blue * 255) == 0x56)
+  }
+
+  func testAlpha() {
+    XCTAssertEqual(0x123456.color ~ 50%, 0x123456.color.withAlphaComponent(0.5))
+  }
+
+  func testPercent() {
+    XCTAssert(50% == 0.5)
+    XCTAssert(12% == 0.12)
+  }
 
 }

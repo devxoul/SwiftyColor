@@ -24,48 +24,48 @@
 // SOFTWARE.
 
 #if os(iOS)
-    import UIKit
-    public typealias Color = UIColor
+  import UIKit
+  public typealias Color = UIColor
 #elseif os(OSX)
-    import AppKit
-    public typealias Color = NSColor
+  import AppKit
+  public typealias Color = NSColor
 #endif
 
 extension Int {
-    public var color: Color {
-        let red = CGFloat(self as Int >> 16 & 0xff) / 255
-        let green = CGFloat(self >> 8 & 0xff) / 255
-        let blue  = CGFloat(self & 0xff) / 255
-        return Color(red: red, green: green, blue: blue, alpha: 1)
-    }
+  public var color: Color {
+    let red = CGFloat(self as Int >> 16 & 0xff) / 255
+    let green = CGFloat(self >> 8 & 0xff) / 255
+    let blue  = CGFloat(self & 0xff) / 255
+    return Color(red: red, green: green, blue: blue, alpha: 1)
+  }
 }
 
 precedencegroup AlphaPrecedence {
-    associativity: left
-    higherThan: RangeFormationPrecedence
-    lowerThan: AdditionPrecedence
+  associativity: left
+  higherThan: RangeFormationPrecedence
+  lowerThan: AdditionPrecedence
 }
 
 infix operator ~ : AlphaPrecedence
 
 public func ~ (color: Color, alpha: Int) -> Color {
-    return color ~ CGFloat(alpha)
+  return color ~ CGFloat(alpha)
 }
 public func ~ (color: Color, alpha: Float) -> Color {
-    return color ~ CGFloat(alpha)
+  return color ~ CGFloat(alpha)
 }
 public func ~ (color: Color, alpha: CGFloat) -> Color {
-    return color.withAlphaComponent(alpha)
+  return color.withAlphaComponent(alpha)
 }
 
 /// e.g. `50%`
 postfix operator %
 public postfix func % (percent: Int) -> CGFloat {
-    return CGFloat(percent)%
+  return CGFloat(percent)%
 }
 public postfix func % (percent: Float) -> CGFloat {
-    return CGFloat(percent)%
+  return CGFloat(percent)%
 }
 public postfix func % (percent: CGFloat) -> CGFloat {
-    return percent / 100
+  return percent / 100
 }
