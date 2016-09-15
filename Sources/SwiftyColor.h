@@ -23,33 +23,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#if os(iOS)
-  import UIKit
-#elseif os(OSX)
-  import AppKit
-#endif
+@import Foundation;
 
-import XCTest
-import SwiftyColor
+//! Project version number for SwiftyColor.
+FOUNDATION_EXPORT double SwiftyColorVersionNumber;
 
-final class SwiftyColorTests: XCTestCase {
+//! Project version string for SwiftyColor.
+FOUNDATION_EXPORT const unsigned char SwiftyColorVersionString[];
 
-  func testHex() {
-    let color = 0x123456.color
-    var (red, green, blue) = (CGFloat(), CGFloat(), CGFloat())
-    color.getRed(&red, green: &green, blue: &blue, alpha: nil)
-    XCTAssert(Int(red * 255) == 0x12)
-    XCTAssert(Int(green * 255) == 0x34)
-    XCTAssert(Int(blue * 255) == 0x56)
-  }
+// In this header, you should import all the public headers of your framework using statements like #import <SwiftyColor/PublicHeader.h>
 
-  func testAlpha() {
-    XCTAssertEqual(0x123456.color ~ 50%, 0x123456.color.withAlphaComponent(0.5))
-  }
 
-  func testPercent() {
-    XCTAssert(50% == 0.5)
-    XCTAssert(12% == 0.12)
-  }
-
-}

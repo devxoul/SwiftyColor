@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Suyeol Jeon' => 'devxoul@gmail.com' }
   s.source           = { :git => 'https://github.com/devxoul/SwiftyColor.git', :tag => s.version.to_s }
-  s.source_files     = 'SwiftyColor/*.{swift}'
+  s.source_files     = 'Sources/*.{swift}'
   s.requires_arc     = true
 
   s.ios.deployment_target = '8.0'

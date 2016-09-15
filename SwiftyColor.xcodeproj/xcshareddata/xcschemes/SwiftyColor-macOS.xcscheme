@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0620"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -8,33 +8,33 @@
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0380BCE31A658685002D76DB"
-               BuildableName = "SwiftyColor-OSX-Tests.xctest"
-               BlueprintName = "SwiftyColor-OSX-Tests"
+               BlueprintIdentifier = "0330D3BE1D85C16F00BBB3F5"
+               BuildableName = "SwiftyColor.framework"
+               BlueprintName = "SwiftyColor-macOS"
                ReferencedContainer = "container:SwiftyColor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0380BCE31A658685002D76DB"
-               BuildableName = "SwiftyColor-OSX-Tests.xctest"
-               BlueprintName = "SwiftyColor-OSX-Tests"
+               BuildableName = "SwiftyColor-macOS-Tests.xctest"
+               BlueprintName = "SwiftyColor-macOS-Tests"
                ReferencedContainer = "container:SwiftyColor.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,31 +42,52 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0380BCE31A658685002D76DB"
-            BuildableName = "SwiftyColor-OSX-Tests.xctest"
-            BlueprintName = "SwiftyColor-OSX-Tests"
+            BlueprintIdentifier = "0330D3BE1D85C16F00BBB3F5"
+            BuildableName = "SwiftyColor.framework"
+            BlueprintName = "SwiftyColor-macOS"
             ReferencedContainer = "container:SwiftyColor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0330D3BE1D85C16F00BBB3F5"
+            BuildableName = "SwiftyColor.framework"
+            BlueprintName = "SwiftyColor-macOS"
+            ReferencedContainer = "container:SwiftyColor.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0330D3BE1D85C16F00BBB3F5"
+            BuildableName = "SwiftyColor.framework"
+            BlueprintName = "SwiftyColor-macOS"
+            ReferencedContainer = "container:SwiftyColor.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
