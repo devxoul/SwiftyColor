@@ -2,8 +2,8 @@ SwiftyColor
 ===========
 
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
-[![Build Status](https://travis-ci.org/devxoul/SwiftyColor.svg)](https://travis-ci.org/devxoul/SwiftyColor)
 [![CocoaPods](http://img.shields.io/cocoapods/v/SwiftyColor.svg?style=flat)](http://cocoapods.org/?q=name%3ASwiftyColor%20author%3Adevxoul)
+[![CI](https://github.com/devxoul/SwiftyColor/workflows/CI/badge.svg)](http://github.com/devxoul/SwiftyColor/actions)
 
 The most sexy way to use colors in Swift. Both compatible with iOS and macOS.
 
