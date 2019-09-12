@@ -1,5 +1,0 @@
-language: objective-c
-osx_image: xcode10.2
-script:
-  - xcodebuild -scheme 'SwiftyColor-iOS' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
-  - xcodebuild -scheme 'SwiftyColor-macOS' test | xcpretty -c
