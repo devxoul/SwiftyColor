@@ -7,6 +7,10 @@ on:
 jobs:
   test:
     runs-on: macOS-latest
+    env:
+      PROJECT: SwiftyColor.xcodeproj
+      SCHEME: SwiftyColor-Package
+      CODECOV_PACKAGE_NAME: SwiftyColor
     strategy:
       matrix:
         env:
@@ -36,8 +40,6 @@ jobs:
           -enableCodeCoverage YES \
           CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c;
       env:
-        PROJECT: SwiftyColor.xcodeproj
-        SCHEME: SwiftyColor-Package
         SDK: ${{ matrix.env.sdk }}
         DESTINATION: ${{ matrix.env.destination }}
 
@@ -45,5 +47,5 @@ jobs:
       run: |
         bash <(curl -s https://codecov.io/bash) \
           -X xcodeplist \
-          -J SwiftyColor \
           -t 2e3ef5e8-ca59-4831-bfcb-267ca5ce8f75
+          -J "$CODECOV_PACKAGE_NAME" \
